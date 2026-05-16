@@ -16,9 +16,11 @@ def create_person_list(people: list) -> list:
     for person in people:
         if "wife" in person:
             if person["wife"] is not None:
-                Person.people[person["name"]].wife = Person.people[person["wife"]]
+                current = Person.people[person["name"]]
+                current.wife = Person.people[person["wife"]]
         if "husband" in person:
             if person["husband"] is not None:
-                Person.people[person["name"]].husband = Person.people[person["husband"]]
+                current = Person.people[person["name"]]
+                current.husband = Person.people[person["husband"]]
 
     return result
